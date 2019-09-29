@@ -1,0 +1,39 @@
+{
+    "name": "typescript-quickstart",
+    "description": "A quick start template for Typescript.",
+    "keywords": [
+        "quickstart",
+        "typescript",
+        "template",
+        "compiler",
+        "meta",
+        "node"
+    ],
+    "version": "0.0.0",
+    "main": "dist/index.js",
+    "files": [
+        "src/**/*",
+        "dist/**/*"
+    ],
+    "repository": "https://github.com/Richienb/typescript-quickstart.git",
+    "author": "Richie Bendall <richiebendall@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "dev": "microbundle --target node --watch",
+        "build": "yarn js && yarn docs",
+        "js": "microbundle --target node",
+        "docs": "typedoc --out ./docs --mode file --target ES6 ./src",
+        "lint": "eslint src/*"
+    },
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^2.3.1",
+        "eslint": "^6.4.0",
+        "eslint-config-google": "^0.14.0",
+        "microbundle": "^0.11.0",
+        "typedoc": "^0.15.0"
+    },
+    "resolutions": {
+        "microbundle/rollup-plugin-typescript2/rollup-pluginutils/micromatch/braces": "^2.3.1",
+        "microbundle/rollup-plugin-postcss/cssnano/postcss-svgo/svgo/js-yaml": "^3.13.0"
+    }
+}

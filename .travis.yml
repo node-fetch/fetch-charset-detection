@@ -1,0 +1,42 @@
+language: node_js
+
+node_js: lts/*
+
+cache:
+    - npm
+    - yarn
+
+before_install: npm i -g yarn
+
+install: yarn install --non-interactive
+
+script:
+    - yarn lint
+    - yarn build
+    - if [ -n "$TRAVIS_TAG" ]; then npm version $TRAVIS_TAG; fi
+
+deploy:
+    - provider: npm
+      email: richiebendall@gmail.com
+      skip_cleanup: true
+      api_key: $npm_token
+      on:
+          tags: true
+
+    - provider: releases
+      api_key: $github_token
+      file_glob: true
+      file: dist/*
+      skip_cleanup: true
+      on:
+          tags: true
+
+    - provider: pages
+      skip_cleanup: true
+      github_commit: "Published documentation [skip ci]"
+      github_token: $github_token
+      name: "ROS Bot"
+      email: "richiebendall@gmail.com"
+      local_dir: docs
+      on:
+          tags: true
