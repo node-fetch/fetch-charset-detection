@@ -1,13 +1,12 @@
 {
-    "name": "typescript-quickstart",
-    "description": "A quick start template for Typescript.",
+    "name": "fetch-charset-detection",
+    "description": "Convert a buffer and headers to UTF-8 text, originally from node-fetch.",
     "keywords": [
-        "quickstart",
-        "typescript",
-        "template",
-        "compiler",
+        "content-type",
+        "headers",
+        "http",
         "meta",
-        "node"
+        "node-fetch"
     ],
     "version": "0.0.0",
     "main": "dist/index.js",
@@ -15,18 +14,26 @@
         "src/**/*",
         "dist/**/*"
     ],
-    "repository": "https://github.com/Richienb/typescript-quickstart.git",
+    "repository": "https://github.com/Richienb/fetch-charset-detection.git",
     "author": "Richie Bendall <richiebendall@gmail.com>",
     "license": "MIT",
     "scripts": {
         "dev": "microbundle --target node --watch",
         "build": "yarn js && yarn docs",
-        "js": "microbundle --target node",
-        "docs": "typedoc --out ./docs --mode file --target ES6 ./src",
+        "js": "microbundle --target node --format es,cjs --external http,https,stream,zlib,cheerio,content-type,iconv-lite",
+        "docs": "typedoc --out ./docs --mode file --target ES6 --ignoreCompilerErrors ./src",
         "lint": "eslint src/*"
     },
+    "dependencies": {
+        "cheerio": "^1.0.0-rc.3",
+        "content-type": "^1.0.4",
+        "iconv-lite": "^0.5.0"
+    },
     "devDependencies": {
+        "@types/cheerio": "^0.22.13",
+        "@types/content-type": "^1.1.3",
         "@typescript-eslint/eslint-plugin": "^2.3.1",
+        "@typescript-eslint/parser": "^2.3.1",
         "eslint": "^6.4.0",
         "eslint-config-google": "^0.14.0",
         "microbundle": "^0.11.0",

@@ -1,34 +1,17 @@
-# Typescript QuickStart
+# Fetch Charset Detection [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/fetch-charset-detection/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/fetch-charset-detection)
 
-A quick start template for Typescript.
+Convert a buffer and headers to UTF-8 text, originally from `node-fetch`.
 
-[![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/typescript-quickstart/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/typescript-quickstart)
-[![CodeFactor Score](https://www.codefactor.io/repository/github/Richienb/typescript-quickstart/badge?style=for-the-badge)](https://www.codefactor.io/repository/github/Richienb/typescript-quickstart)
-
-[![NPM](https://nodei.co/npm/typescript-quickstart.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/typescript-quickstart)
+[![NPM](https://nodei.co/npm/fetch-charset-detection.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/fetch-charset-detection)
 
 ## Importing
 
 From your NodeJS application:
 
 ```js
-const TypeScriptQuickStart = require("typescript-quickstart")
-```
-
-From your web application:
-
-```html
-<script src="https://unpkg.com/typescript-quickstart/dist/index.min.js"></script>
-```
-
-## Initialisation
-
-```js
-const TypeScriptQuickStart = new TypeScriptQuickStart()
+const charsetDetection = require("fetch-charset-detection");
 ```
 
 ## Usage
 
-Read the [documentation](https://richienb.github.io/typescript-quickstart).
-
-> The typescript-quickstart npm module is not maintained by this project.
+Read the [documentation](https://richienb.github.io/fetch-charset-detection).
