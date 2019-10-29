@@ -32,15 +32,16 @@
     "devDependencies": {
         "@types/cheerio": "^0.22.13",
         "@types/content-type": "^1.1.3",
-        "@typescript-eslint/eslint-plugin": "^2.3.1",
-        "@typescript-eslint/parser": "^2.3.1",
         "eslint": "^6.4.0",
-        "eslint-config-google": "^0.14.0",
+        "eslint-config-richienb": "^0.2.0",
         "microbundle": "^0.11.0",
         "typedoc": "^0.15.0"
     },
     "resolutions": {
         "microbundle/rollup-plugin-typescript2/rollup-pluginutils/micromatch/braces": "^2.3.1",
         "microbundle/rollup-plugin-postcss/cssnano/postcss-svgo/svgo/js-yaml": "^3.13.0"
+    },
+    "eslintConfig": {
+        "extends": "richienb/ts"
     }
 }
