@@ -6,7 +6,7 @@ const NAME = Symbol.toStringTag;
  *
  * @param obj The object to check.
  */
-export function isURLSearchParams(obj): boolean {
+export function isURLSearchParams(obj: any): obj is URLSearchParams {
     return (
         typeof obj === 'object' &&
         typeof obj.append === 'function' &&
@@ -20,12 +20,19 @@ export function isURLSearchParams(obj): boolean {
     );
 }
 
+interface FetchBlob extends Blob {
+    arrayBuffer: Function,
+    type: string,
+    stream: Function,
+    constructor: Function
+}
+
 /**
  * Check if `obj` is a W3C `Blob` object (which `File` inherits from)
  *
  * @param obj The object to check.
  */
-export function isBlob(obj): boolean {
+export function isBlob(obj: any): obj is FetchBlob {
     return (
         typeof obj === 'object' &&
         typeof obj.arrayBuffer === 'function' &&
@@ -41,7 +48,7 @@ export function isBlob(obj): boolean {
  *
  * @param obj The object to check.
  */
-export function isAbortSignal(obj): boolean {
+export function isAbortSignal(obj: any): obj is AbortSignal {
     return (
         typeof obj === 'object' &&
         obj[NAME] === 'AbortSignal'
@@ -53,8 +60,16 @@ export function isAbortSignal(obj): boolean {
  *
  * @param obj The object to check.
  */
-export function isArrayBuffer(obj): boolean {
+export function isArrayBuffer(obj: any): obj is ArrayBuffer {
     return obj[NAME] === 'ArrayBuffer';
+}
+
+interface AbortError extends Error {
+    name: "AbortError";
+    [Symbol.toStringTag]: "AbortError"
+    constructor(message: string);
+    type: string;
+    message: string;
 }
 
 /**
@@ -62,6 +77,6 @@ export function isArrayBuffer(obj): boolean {
  *
  * @param obj The object to check.
  */
-export function isAbortError(obj): boolean {
-    return obj.name === 'AbortError';
+export function isAbortError(obj: any): obj is AbortError {
+    return obj[NAME] === 'AbortError';
 }
