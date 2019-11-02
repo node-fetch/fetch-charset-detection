@@ -38,8 +38,8 @@
         "typedoc": "^0.15.0"
     },
     "resolutions": {
-        "microbundle/rollup-plugin-typescript2/rollup-pluginutils/micromatch/braces": "^2.3.1",
-        "microbundle/rollup-plugin-postcss/cssnano/postcss-svgo/svgo/js-yaml": "^3.13.0"
+        "microbundle/rollup-plugin-typescript2/rollup-pluginutils/micromatch/braces": "^3.0.2",
+        "microbundle/rollup-plugin-postcss/cssnano/postcss-svgo/svgo/js-yaml": "^3.13.1"
     },
     "eslintConfig": {
         "extends": "richienb/ts"
