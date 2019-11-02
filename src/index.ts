@@ -3,7 +3,7 @@
  *
  * MIT License
  *
- * Copyright (c) 2016 - 2019 The Node Fetch Team
+ * Copyright (c) 2019 Richie Bendall and 2016 - 2019 The Node Fetch Team
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the 'Software'), to deal
@@ -26,7 +26,7 @@
 
 import { decode as convert } from "iconv-lite"
 import getCharSet from "./utils/getCharSet"
-import { parse as $ } from "cheerio"
+import { load as $ } from "cheerio"
 import { isURLSearchParams, isBlob, isArrayBuffer } from "./utils/is"
 import { Stream, Writable } from "stream"
 
@@ -48,11 +48,13 @@ export function convertBody(buffer: Buffer, headers?: Headers): string {
     const res = buffer.slice(0, 1024).toString()
 
     // HTML5, HTML4 and XML
-    if (!charset && res) charset = getCharSet(
-        $(res)("meta[charset]").attr("charset") || // HTML5
-        $(res)("meta[http-equiv][content]").attr("content") || // HTML4
-        $(res.replace(/<\?(.*)\?>/im, "<$1>"), { xmlMode: true }).root().find("xml").attr("encoding") // XML
-    )
+    if (!charset && res) {
+        charset = getCharSet(
+            $(res)("meta[charset]").attr("charset") || // HTML5
+            $(res)("meta[http-equiv][content]").attr("content") || // HTML4
+            $(res.replace(/<\?(.*)\?>/im, "<$1>"), { xmlMode: true }).root().find("xml").attr("encoding") // XML
+        )
+    }
 
     // Prevent decode issues when sites use incorrect encoding
     // ref: https://hsivonen.fi/encoding-menu/
