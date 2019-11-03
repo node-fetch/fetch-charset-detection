@@ -1,4 +1,4 @@
-import getCharSet from "../utils/getCharSet"
+import getCharSet from "../utils/get-charset"
 import { decode as convert } from "iconv-lite"
 import { load as $ } from "cheerio"
 
@@ -24,7 +24,7 @@ export function convertBody(buffer: Buffer, headers?: Headers): string {
         charset = getCharSet(
             $(res)("meta[charset]").attr("charset") || // HTML5
             $(res)("meta[http-equiv][content]").attr("content") || // HTML4
-            $(res.replace(/<\?(.*)\?>/im, "<$1>"), { xmlMode: true }).root().find("xml").attr("encoding") // XML
+            $(res.replace(/<\?(.*)\?>/im, "<$1>"), { xmlMode: true }).root().find("xml").attr("encoding"), // XML
         )
     }
 
@@ -35,6 +35,6 @@ export function convertBody(buffer: Buffer, headers?: Headers): string {
     // Turn raw buffers into a single utf-8 buffer
     return convert(
         buffer,
-        charset || "utf-8"
+        charset || "utf-8",
     )
 }

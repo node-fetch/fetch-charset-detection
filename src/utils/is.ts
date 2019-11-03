@@ -1,4 +1,4 @@
-const NAME = Symbol.toStringTag;
+const NAME = Symbol.toStringTag
 
 /**
  * Check if `obj` is a URLSearchParams object
@@ -8,19 +8,19 @@ const NAME = Symbol.toStringTag;
  */
 export function isURLSearchParams(obj: any): obj is URLSearchParams {
     return (
-        typeof obj === 'object' &&
-        typeof obj.append === 'function' &&
-        typeof obj.delete === 'function' &&
-        typeof obj.get === 'function' &&
-        typeof obj.getAll === 'function' &&
-        typeof obj.has === 'function' &&
-        typeof obj.set === 'function' &&
-        typeof obj.sort === 'function' &&
-        obj[NAME] === 'URLSearchParams'
-    );
+        typeof obj === "object" &&
+        typeof obj.append === "function" &&
+        typeof obj.delete === "function" &&
+        typeof obj.get === "function" &&
+        typeof obj.getAll === "function" &&
+        typeof obj.has === "function" &&
+        typeof obj.set === "function" &&
+        typeof obj.sort === "function" &&
+        obj[NAME] === "URLSearchParams"
+    )
 }
 
-interface FetchBlob extends Blob {
+declare interface FetchBlob extends Blob {
     arrayBuffer: Function,
     type: string,
     stream: Function,
@@ -34,13 +34,13 @@ interface FetchBlob extends Blob {
  */
 export function isBlob(obj: any): obj is FetchBlob {
     return (
-        typeof obj === 'object' &&
-        typeof obj.arrayBuffer === 'function' &&
-        typeof obj.type === 'string' &&
-        typeof obj.stream === 'function' &&
-        typeof obj.constructor === 'function' &&
+        typeof obj === "object" &&
+        typeof obj.arrayBuffer === "function" &&
+        typeof obj.type === "string" &&
+        typeof obj.stream === "function" &&
+        typeof obj.constructor === "function" &&
         /^(Blob|File)$/.test(obj[NAME])
-    );
+    )
 }
 
 /**
@@ -50,9 +50,9 @@ export function isBlob(obj: any): obj is FetchBlob {
  */
 export function isAbortSignal(obj: any): obj is AbortSignal {
     return (
-        typeof obj === 'object' &&
-        obj[NAME] === 'AbortSignal'
-    );
+        typeof obj === "object" &&
+        obj[NAME] === "AbortSignal"
+    )
 }
 
 /**
@@ -61,15 +61,15 @@ export function isAbortSignal(obj: any): obj is AbortSignal {
  * @param obj The object to check.
  */
 export function isArrayBuffer(obj: any): obj is ArrayBuffer {
-    return obj[NAME] === 'ArrayBuffer';
+    return obj[NAME] === "ArrayBuffer"
 }
 
-interface AbortError extends Error {
+declare class AbortError extends Error {
     name: "AbortError";
-    [Symbol.toStringTag]: "AbortError"
+    [Symbol.toStringTag]: "AbortError";
     constructor(message: string);
     type: string;
-    message: string;
+    message: string
 }
 
 /**
@@ -78,5 +78,5 @@ interface AbortError extends Error {
  * @param obj The object to check.
  */
 export function isAbortError(obj: any): obj is AbortError {
-    return obj[NAME] === 'AbortError';
+    return obj[NAME] === "AbortError"
 }

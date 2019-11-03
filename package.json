@@ -22,7 +22,7 @@
         "build": "yarn js && yarn docs",
         "js": "microbundle --target node --format es,cjs --external http,https,stream,zlib,cheerio,content-type,iconv-lite",
         "docs": "typedoc --out ./docs --mode file --target ES6 --ignoreCompilerErrors ./src",
-        "lint": "eslint src/*"
+        "lint": "eslint src/**/*"
     },
     "dependencies": {
         "cheerio": "^1.0.0-rc.3",

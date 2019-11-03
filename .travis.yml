@@ -33,7 +33,7 @@ deploy:
 
     - provider: pages
       skip_cleanup: true
-      github_commit: "Published documentation [skip ci]"
+      github_commit: "chore: Published documentation [skip ci]"
       github_token: $github_token
       name: "ROS Bot"
       email: "richiebendall@gmail.com"
