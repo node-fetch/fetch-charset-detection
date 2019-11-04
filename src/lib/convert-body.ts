@@ -1,4 +1,4 @@
-import getCharSet from "../utils/get-charset"
+import getCharset from "../utils/get-charset"
 import { decode as convert } from "iconv-lite"
 import { load as $ } from "cheerio"
 
@@ -14,14 +14,14 @@ export function convertBody(buffer: Buffer, headers?: Headers): string {
     let charset: string
 
     // Header
-    if (contentType) charset = getCharSet(contentType)
+    if (contentType) charset = getCharset(contentType)
 
     // No charset in content type, peek at response body for at most 1024 bytes
     const res = buffer.slice(0, 1024).toString()
 
     // HTML5, HTML4 and XML
     if (!charset && res) {
-        charset = getCharSet(
+        charset = getCharset(
             $(res)("meta[charset]").attr("charset") || // HTML5
             $(res)("meta[http-equiv][content]").attr("content") || // HTML4
             $(res.replace(/<\?(.*)\?>/im, "<$1>"), { xmlMode: true }).root().find("xml").attr("encoding"), // XML
