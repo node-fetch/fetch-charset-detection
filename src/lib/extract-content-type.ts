@@ -1,5 +1,6 @@
 import { Stream } from "stream"
 import { isBlob, isURLSearchParams, isArrayBuffer } from "../utils/is"
+import _ from "lodash"
 
 /**
  * Performs the operation "extract a `Content-Type` value from |object|" as
@@ -11,8 +12,11 @@ import { isBlob, isURLSearchParams, isArrayBuffer } from "../utils/is"
  * @param body Any options.body input
  */
 export function extractContentType(body: any): string | null {
+    // Body is null or undefined
+    if (_.isNil(body)) return null
+
     // Body is string
-    if (typeof body === "string") return "text/plain;charset=UTF-8"
+    if (_.isString(body)) return "text/plain;charset=UTF-8"
 
     // Body is a URLSearchParams
     if (isURLSearchParams(body)) return "application/x-www-form-urlencoded;charset=UTF-8"
@@ -24,7 +28,7 @@ export function extractContentType(body: any): string | null {
     if (Buffer.isBuffer(body) || isArrayBuffer(body) || ArrayBuffer.isView(body)) return null
 
     // Detect form data input from form-data module
-    if (typeof body.getBoundary === "function") return `multipart/form-data;boundary=${body.getBoundary()}`
+    if (body && _.isFunction(body.getBoundary)) return `multipart/form-data;boundary=${body.getBoundary()}`
 
     // Body is stream - can't really do much about this
     if (body instanceof Stream) return null

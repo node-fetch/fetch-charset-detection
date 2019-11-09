@@ -9,9 +9,14 @@ Convert a buffer and headers to UTF-8 text, originally from `node-fetch`.
 From your NodeJS application:
 
 ```js
-const charsetDetection = require("fetch-charset-detection");
+const {
+    convertBody,
+    extractContentType,
+    getTotalBytes,
+    writeToStream
+} = require("fetch-charset-detection");
 ```
 
-## Usage
+## API
 
-Read the [documentation](https://richienb.github.io/fetch-charset-detection).
+Refer to the [documentation](https://richienb.github.io/fetch-charset-detection).

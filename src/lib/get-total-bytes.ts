@@ -1,4 +1,5 @@
 import { isBlob } from "../utils/is"
+import _ from "lodash"
 
 /**
  * The Fetch Standard treats this as if "total bytes" is a property on the body.
@@ -8,7 +9,7 @@ import { isBlob } from "../utils/is"
  *
  * @param body Body object from the Body instance.
  */
-export function getTotalBytes(body: any): number | null {
+export function getTotalBytes({ body }: { body: any }): number | null {
     // Body is null or undefined
     if (body == null) return 0
 
@@ -19,7 +20,7 @@ export function getTotalBytes(body: any): number | null {
     if (Buffer.isBuffer(body)) return body.length
 
     // Detect form data input from form-data module
-    if (body && typeof body.getLengthSync === "function") return body.hasKnownLength && body.hasKnownLength() ? body.getLengthSync() : null
+    if (body && _.isFunction(body.getLengthSync)) return body.hasKnownLength && body.hasKnownLength() ? body.getLengthSync() : null
 
     // Body is stream
     return null

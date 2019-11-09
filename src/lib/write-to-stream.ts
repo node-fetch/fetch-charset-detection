@@ -7,7 +7,7 @@ import { isBlob } from "../utils/is"
  * @param body Body object from the Body instance.
  * @param dest The stream to write to.
  */
-export function writeToStream(body: any, dest: Writable): void {
+export function writeToStream(dest: Writable, { body }: { body: any }): void {
     // Body is null
     if (body == null) dest.end()
 
