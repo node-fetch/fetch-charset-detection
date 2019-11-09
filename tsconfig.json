@@ -1,5 +1,12 @@
 {
     "compilerOptions": {
-        "esModuleInterop": true
-    }
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "declaration": true,
+        "outDir": "dist/",
+        "target": "es5"
+    },
+    "include": [
+        "src/**/*"
+    ]
 }

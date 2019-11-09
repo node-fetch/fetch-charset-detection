@@ -1,5 +1,5 @@
 import getCharset from "../utils/get-charset"
-import { decode as convert } from "iconv-lite"
+import { decode } from "iconv-lite"
 import { load as $ } from "cheerio"
 import _ from "lodash"
 
@@ -31,10 +31,10 @@ export function convertBody(buffer: Buffer, headers?: Headers): string {
 
     // Prevent decode issues when sites use incorrect encoding
     // ref: https://hsivonen.fi/encoding-menu/
-    if (charset && _.lowerCase(charset) in ["gb2312", "gbk"]) charset = "gb18030"
+    if (charset && _.includes(["gb2312", "gbk"], _.lowerCase(charset))) charset = "gb18030"
 
     // Turn raw buffers into a single utf-8 buffer
-    return convert(
+    return decode(
         buffer,
         charset || "utf-8",
     )

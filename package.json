@@ -20,7 +20,7 @@
     "scripts": {
         "dev": "yarn js --watch",
         "build": "yarn js && yarn docs",
-        "js": "tsc --outDir dist/",
+        "js": "tsc",
         "docs": "typedoc --out ./docs --mode file --target ES6 --ignoreCompilerErrors ./src",
         "lint": "eslint src/**/*",
         "test": "ava"
@@ -29,7 +29,8 @@
         "cheerio": "^1.0.0-rc.3",
         "content-type": "^1.0.4",
         "iconv-lite": "^0.5.0",
-        "lodash": "^4.17.15"
+        "lodash": "^4.17.15",
+        "nice-try": "^2.0.0"
     },
     "devDependencies": {
         "@types/cheerio": "^0.22.13",
@@ -59,5 +60,8 @@
         "require": [
             "ts-node/register"
         ]
+    },
+    "engines": {
+        "node": ">=0.12"
     }
 }
