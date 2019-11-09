@@ -1,6 +1,6 @@
 {
     "name": "fetch-charset-detection",
-    "description": "Convert a buffer and headers to UTF-8 text, originally from node-fetch.",
+    "description": "Charset detection and conversion utilities, originally from node-fetch.",
     "keywords": [
         "content-type",
         "headers",
