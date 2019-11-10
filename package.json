@@ -22,7 +22,7 @@
         "build": "yarn js && yarn docs",
         "js": "tsc",
         "docs": "typedoc --out ./docs --mode file --target ES6 --ignoreCompilerErrors ./src",
-        "lint": "eslint src/**/*",
+        "lint": "xo",
         "test": "ava"
     },
     "dependencies": {
@@ -53,7 +53,18 @@
         "eslint": "^6.6.0"
     },
     "xo": {
-        "extends": "richienb/node"
+        "extends": "richienb/node",
+        "overrides": [
+            {
+                "files": "test.js",
+                "rules": {
+                    "import/default": 0,
+                    "node/no-missing-import": 0,
+                    "import/no-unresolved": 0,
+                    "node/no-unsupported-features/node-builtins": 0
+                }
+            }
+        ]
     },
     "ava": {
         "compileEnhancements": false,

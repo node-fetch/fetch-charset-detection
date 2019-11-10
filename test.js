@@ -1,12 +1,12 @@
-import test, { before, after } from "ava"
-import resumer from "resumer"
-import FormData from "form-data"
 import * as stream from "stream"
-import { extractContentType, getTotalBytes } from "./src"
+import FormData from "form-data"
+import resumer from "resumer"
+import test, { before, after } from "ava"
 import express from "express"
-import getPort from "get-port" // eslint-disable-line import/default
+import getPort from "get-port"
 import { Request } from "node-fetch"
 import Blob from "fetch-blob"
+import { extractContentType, getTotalBytes } from "./src"
 const app = express()
 
 before(async (t) => {
