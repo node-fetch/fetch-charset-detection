@@ -67,53 +67,14 @@
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Classes</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-class tsd-is-not-exported"><a href="classes/aborterror.html" class="tsd-kind-icon">Abort<wbr>Error</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Interfaces</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-interface tsd-is-not-exported"><a href="interfaces/fetchblob.html" class="tsd-kind-icon">Fetch<wbr>Blob</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Variables</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-variable tsd-is-not-exported"><a href="globals.html#name" class="tsd-kind-icon">NAME</a></li>
-							</ul>
-						</section>
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-function"><a href="globals.html#convertbody" class="tsd-kind-icon">convert<wbr>Body</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#extractcontenttype" class="tsd-kind-icon">extract<wbr>Content<wbr>Type</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#getcharset" class="tsd-kind-icon">get<wbr>Charset</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#gettotalbytes" class="tsd-kind-icon">get<wbr>Total<wbr>Bytes</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#isaborterror" class="tsd-kind-icon">is<wbr>Abort<wbr>Error</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#isabortsignal" class="tsd-kind-icon">is<wbr>Abort<wbr>Signal</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#isarraybuffer" class="tsd-kind-icon">is<wbr>Array<wbr>Buffer</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#isblob" class="tsd-kind-icon">is<wbr>Blob</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#isurlsearchparams" class="tsd-kind-icon">isURLSearch<wbr>Params</a></li>
-								<li class="tsd-kind-function"><a href="globals.html#writetostream" class="tsd-kind-icon">write<wbr>ToStream</a></li>
+								<li class="tsd-kind-function tsd-is-private"><a href="globals.html#getcharset" class="tsd-kind-icon">get<wbr>Charset</a></li>
 							</ul>
 						</section>
 					</div>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
-				<h2>Variables</h2>
-				<section class="tsd-panel tsd-member tsd-kind-variable tsd-is-not-exported">
-					<a name="name" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagConst">Const</span> NAME</h3>
-					<div class="tsd-signature tsd-kind-icon">NAME<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol.toStringTag</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/Richienb/fetch-charset-detection/blob/cad9ae0/src/utils/is.ts#L3">utils/is.ts:3</a></li>
-						</ul>
-					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
@@ -122,13 +83,13 @@
 					<a name="convertbody" class="tsd-anchor"></a>
 					<h3>convert<wbr>Body</h3>
 					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">convert<wbr>Body<span class="tsd-signature-symbol">(</span>buffer<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span>, headers<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+						<li class="tsd-signature tsd-kind-icon">convert<wbr>Body<span class="tsd-signature-symbol">(</span>content<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span>, headers<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Headers</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Richienb/fetch-charset-detection/blob/cad9ae0/src/lib/convert-body.ts#L13">lib/convert-body.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/Richienb/fetch-charset-detection/blob/9878990/src/index.ts#L39">index.ts:39</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -140,15 +101,15 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>buffer: <span class="tsd-signature-type">Buffer</span></h5>
+									<h5>content: <span class="tsd-signature-type">Buffer</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Incoming buffer.</p>
+										<p>The content to convert.</p>
 									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> headers: <span class="tsd-signature-type">Headers</span></h5>
 									<div class="tsd-comment tsd-typography">
-										<p>Headers provided with the request.</p>
+										<p>HTTP Headers provided with a request.</p>
 									</div>
 								</li>
 							</ul>
@@ -156,54 +117,17 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="extractcontenttype" class="tsd-anchor"></a>
-					<h3>extract<wbr>Content<wbr>Type</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">extract<wbr>Content<wbr>Type<span class="tsd-signature-symbol">(</span>body<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Richienb/fetch-charset-detection/blob/cad9ae0/src/lib/extract-content-type.ts#L14">lib/extract-content-type.ts:14</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Performs the operation &quot;extract a <code>Content-Type</code> value from |object|&quot; as
-										specified in the specification:
-									<a href="https://fetch.spec.whatwg.org/#concept-bodyinit-extract">https://fetch.spec.whatwg.org/#concept-bodyinit-extract</a></p>
-								</div>
-								<p>This function assumes that instance.body is present.</p>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>body: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>Any options.body input</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">null</span>
-							</h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-is-private">
 					<a name="getcharset" class="tsd-anchor"></a>
-					<h3>get<wbr>Charset</h3>
-					<ul class="tsd-signatures tsd-kind-function">
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> get<wbr>Charset</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-is-private">
 						<li class="tsd-signature tsd-kind-icon">get<wbr>Charset<span class="tsd-signature-symbol">(</span>contentType<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/Richienb/fetch-charset-detection/blob/cad9ae0/src/utils/get-charset.ts#L9">utils/get-charset.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/Richienb/fetch-charset-detection/blob/9878990/src/utils/get-charset.ts#L10">utils/get-charset.ts:10</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -227,245 +151,6 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="gettotalbytes" class="tsd-anchor"></a>
-					<h3>get<wbr>Total<wbr>Bytes</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Total<wbr>Bytes<span class="tsd-signature-symbol">(</span>__namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Richienb/fetch-charset-detection/blob/cad9ae0/src/lib/get-total-bytes.ts#L12">lib/get-total-bytes.ts:12</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>The Fetch Standard treats this as if &quot;total bytes&quot; is a property on the body.
-									For us, we have to explicitly get it with a function.</p>
-								</div>
-								<p>ref: <a href="https://fetch.spec.whatwg.org/#concept-body-total-bytes">https://fetch.spec.whatwg.org/#concept-body-total-bytes</a></p>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>__namedParameters: <span class="tsd-signature-type">object</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>body<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>Body object from the Body instance.</p>
-											</div>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">null</span>
-							</h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="isaborterror" class="tsd-anchor"></a>
-					<h3>is<wbr>Abort<wbr>Error</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Abort<wbr>Error<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Richienb/fetch-charset-detection/blob/cad9ae0/src/utils/is.ts#L85">utils/is.ts:85</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Check if <code>obj</code> is an instance of AbortError.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>obj: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The object to check.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="isabortsignal" class="tsd-anchor"></a>
-					<h3>is<wbr>Abort<wbr>Signal</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Abort<wbr>Signal<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Richienb/fetch-charset-detection/blob/cad9ae0/src/utils/is.ts#L53">utils/is.ts:53</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Check if <code>obj</code> is an instance of AbortSignal.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>obj: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The object to check.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="isarraybuffer" class="tsd-anchor"></a>
-					<h3>is<wbr>Array<wbr>Buffer</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Array<wbr>Buffer<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Richienb/fetch-charset-detection/blob/cad9ae0/src/utils/is.ts#L65">utils/is.ts:65</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Check if <code>obj</code> is an instance of ArrayBuffer.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>obj: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The object to check.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="isblob" class="tsd-anchor"></a>
-					<h3>is<wbr>Blob</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Blob<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Richienb/fetch-charset-detection/blob/cad9ae0/src/utils/is.ts#L37">utils/is.ts:37</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Check if <code>obj</code> is a W3C <code>Blob</code> object (which <code>File</code> inherits from)</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>obj: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The object to check.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="isurlsearchparams" class="tsd-anchor"></a>
-					<h3>isURLSearch<wbr>Params</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">isURLSearch<wbr>Params<span class="tsd-signature-symbol">(</span>obj<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Richienb/fetch-charset-detection/blob/cad9ae0/src/utils/is.ts#L11">utils/is.ts:11</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Check if <code>obj</code> is a URLSearchParams object
-									ref: <a href="https://github.com/bitinn/node-fetch/issues/296#issuecomment-307598143">https://github.com/bitinn/node-fetch/issues/296#issuecomment-307598143</a></p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>obj: <span class="tsd-signature-type">any</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The object to check.</p>
-									</div>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-function">
-					<a name="writetostream" class="tsd-anchor"></a>
-					<h3>write<wbr>ToStream</h3>
-					<ul class="tsd-signatures tsd-kind-function">
-						<li class="tsd-signature tsd-kind-icon">write<wbr>ToStream<span class="tsd-signature-symbol">(</span>dest<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Writable</span>, __namedParameters<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/Richienb/fetch-charset-detection/blob/cad9ae0/src/lib/write-to-stream.ts#L10">lib/write-to-stream.ts:10</a></li>
-								</ul>
-							</aside>
-							<div class="tsd-comment tsd-typography">
-								<div class="lead">
-									<p>Write a Body to a Node.js WritableStream (e.g. http.Request) object.</p>
-								</div>
-							</div>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>dest: <span class="tsd-signature-type">Writable</span></h5>
-									<div class="tsd-comment tsd-typography">
-										<p>The stream to write to.</p>
-									</div>
-								</li>
-								<li>
-									<h5>__namedParameters: <span class="tsd-signature-type">object</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>body<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></h5>
-											<div class="tsd-comment tsd-typography">
-												<p>Body object from the Body instance.</p>
-											</div>
-										</li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
 			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
@@ -478,44 +163,11 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-class tsd-is-not-exported">
-						<a href="classes/aborterror.html" class="tsd-kind-icon">Abort<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-is-not-exported">
-						<a href="interfaces/fetchblob.html" class="tsd-kind-icon">Fetch<wbr>Blob</a>
-					</li>
-					<li class=" tsd-kind-variable tsd-is-not-exported">
-						<a href="globals.html#name" class="tsd-kind-icon">NAME</a>
-					</li>
 					<li class=" tsd-kind-function">
 						<a href="globals.html#convertbody" class="tsd-kind-icon">convert<wbr>Body</a>
 					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#extractcontenttype" class="tsd-kind-icon">extract<wbr>Content<wbr>Type</a>
-					</li>
-					<li class=" tsd-kind-function">
+					<li class=" tsd-kind-function tsd-is-private">
 						<a href="globals.html#getcharset" class="tsd-kind-icon">get<wbr>Charset</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#gettotalbytes" class="tsd-kind-icon">get<wbr>Total<wbr>Bytes</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#isaborterror" class="tsd-kind-icon">is<wbr>Abort<wbr>Error</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#isabortsignal" class="tsd-kind-icon">is<wbr>Abort<wbr>Signal</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#isarraybuffer" class="tsd-kind-icon">is<wbr>Array<wbr>Buffer</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#isblob" class="tsd-kind-icon">is<wbr>Blob</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#isurlsearchparams" class="tsd-kind-icon">isURLSearch<wbr>Params</a>
-					</li>
-					<li class=" tsd-kind-function">
-						<a href="globals.html#writetostream" class="tsd-kind-icon">write<wbr>ToStream</a>
 					</li>
 				</ul>
 			</nav>
