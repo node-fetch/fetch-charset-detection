@@ -10,7 +10,7 @@ node_js:
 
 after_success:
     - yarn build
-    - if [ -n "$TRAVIS_TAG" ]; then yarn version $TRAVIS_TAG; fi
+    - if [ -n "$TRAVIS_TAG" ]; then npm version $TRAVIS_TAG; fi
 
 deploy:
     - provider: npm
