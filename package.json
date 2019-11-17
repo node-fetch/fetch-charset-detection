@@ -18,12 +18,11 @@
     "author": "Richie Bendall <richiebendall@gmail.com>",
     "license": "MIT",
     "scripts": {
-        "dev": "yarn js --watch",
-        "build": "yarn js && yarn docs",
-        "js": "tsc",
         "docs": "typedoc",
+        "build": "tsc && yarn docs",
+        "dev": "yarn build --watch",
         "lint": "xo",
-        "test": "ava"
+        "test": "yarn lint && ava"
     },
     "dependencies": {
         "cheerio": "^1.0.0-rc.3",
