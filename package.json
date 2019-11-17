@@ -21,7 +21,7 @@
         "dev": "yarn js --watch",
         "build": "yarn js && yarn docs",
         "js": "tsc",
-        "docs": "typedoc --out ./docs --mode file --target ES6 --ignoreCompilerErrors ./src",
+        "docs": "typedoc",
         "lint": "xo",
         "test": "ava"
     },
@@ -37,23 +37,18 @@
         "@types/content-type": "^1.1.3",
         "@types/lodash": "^4.14.146",
         "ava": "^2.4.0",
-        "xo": "^0.25.3",
         "eslint-config-richienb": "^0.2.2",
-        "express": "^4.17.1",
-        "fetch-blob": "^1.0.4",
-        "form-data": "^3.0.0",
-        "get-port": "^5.0.0",
         "node-fetch": "^2.6.0",
-        "resumer": "^0.0.0",
         "ts-node": "^8.4.1",
         "typedoc": "^0.15.0",
-        "typescript": "^3.7.2"
+        "typescript": "^3.7.2",
+        "xo": "^0.25.3"
     },
     "resolutions": {
         "eslint": "^6.6.0"
     },
     "xo": {
-        "extends": "richienb/node",
+        "extends": "richienb/ts",
         "overrides": [
             {
                 "files": "test.js",

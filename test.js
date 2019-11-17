@@ -1,79 +1,47 @@
-import * as stream from "stream"
-import FormData from "form-data"
-import resumer from "resumer"
-import test, { before, after } from "ava"
-import express from "express"
-import getPort from "get-port"
-import { Request } from "node-fetch"
-import Blob from "fetch-blob"
-import { extractContentType, getTotalBytes } from "./src"
-const app = express()
+import test from "ava"
+import { Headers } from "node-fetch"
+import convertBody from "./src"
+import { encode } from "iconv-lite"
+import _ from "lodash"
 
-before(async (t) => {
-    t.context.port = await getPort()
-    t.context.server = app.listen(t.context.port)
-    t.context.baseURL = `http://localhost:${t.context.port}/`
+test("should support encoding decode, xml dtd detect", (t) => {
+    const text = "<?xml version=\"1.0\" encoding=\"EUC-JP\"?><title>日本語</title>"
+    t.is(convertBody(encode(text, "EUC-JP"), new Headers({ "Content-Type": "text/xml" })), text)
 })
 
-after.always((t) => t.context.server.close())
+test("should support encoding decode, content-type detect", (t) => {
+    const text = "<div>日本語</div>"
+    t.is(convertBody(encode(text, "Shift_JIS"), new Headers({ "Content-Type": "text/html; charset=Shift-JIS" })), text)
+})
 
-test("should calculate content length and extract content type for each body type", (t) => {
-    const url = `${t.context.baseURL}hello`
-    const bodyContent = "a=1"
+test("should support encoding decode, html5 detect", (t) => {
+    const text = "<meta charset=\"gbk\"><div>中文</div>"
+    t.is(convertBody(encode(text, "gbk"), new Headers({ "Content-Type": "text/html" })), text)
+})
 
-    let streamBody = resumer().queue(bodyContent).end()
-    streamBody = streamBody.pipe(new stream.PassThrough())
-    const streamRequest = new Request(url, {
-        method: "POST",
-        body: streamBody,
-        size: 1024,
-    })
+test("should support encoding decode, html4 detect", (t) => {
+    const text = "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=gb2312\"><div>中文</div>"
+    t.is(convertBody(encode(text, "gb2312"), new Headers({ "Content-Type": "text/html" })), text)
+})
 
-    const blobBody = new Blob([bodyContent], { type: "text/plain" })
-    const blobRequest = new Request(url, {
-        method: "POST",
-        body: blobBody,
-        size: 1024,
-    })
+test("should default to utf8 encoding", (t) => {
+    const text = "中文"
+    t.is(convertBody(text), text)
+})
 
-    const formBody = new FormData()
-    formBody.append("a", "1")
-    const formRequest = new Request(url, {
-        method: "POST",
-        body: formBody,
-        size: 1024,
-    })
+test("should support uncommon content-type order, end with qs", (t) => {
+    const text = "中文"
+    t.is(convertBody(encode(text, "gbk"), new Headers({ "Content-Type": "text/plain; charset=gbk; qs=1" })), text)
+})
 
-    const bufferBody = Buffer.from(bodyContent)
-    const bufferRequest = new Request(url, {
-        method: "POST",
-        body: bufferBody,
-        size: 1024,
-    })
+test("should support chunked encoding, html4 detect", (t) => {
+    const text = "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=Shift_JIS\" /><div>日本語</div>"
+    const padding = _.repeat("a", 10)
+    t.is(convertBody(encode(padding + text, "Shift_JIS"), new Headers({ "Content-Type": "text/html", "Transfer-Encoding": "chunked" })), padding + text)
+})
 
-    const stringRequest = new Request(url, {
-        method: "POST",
-        body: bodyContent,
-        size: 1024,
-    })
-
-    const nullRequest = new Request(url, {
-        method: "GET",
-        body: null,
-        size: 1024,
-    })
-
-    t.is(getTotalBytes(streamRequest), null)
-    t.is(getTotalBytes(blobRequest), blobBody.size)
-    t.not(getTotalBytes(formRequest), null)
-    t.is(getTotalBytes(bufferRequest), bufferBody.length)
-    t.is(getTotalBytes(stringRequest), bodyContent.length)
-    t.is(getTotalBytes(nullRequest), 0)
-
-    t.is(extractContentType(streamBody), null)
-    t.is(extractContentType(blobBody), "text/plain")
-    t.true(extractContentType(formBody).startsWith("multipart/form-data"))
-    t.is(extractContentType(bufferBody), null)
-    t.is(extractContentType(bodyContent), "text/plain;charset=UTF-8")
-    t.is(extractContentType(null), null)
+test("should only do encoding detection up to 1024 bytes", (t) => {
+    const text = "中文"
+    const padding = "a".repeat(1200)
+    t.not(convertBody(encode(padding + text, "gbk"), new Headers({ "Content-Type": "text/html", "Transfer-Encoding": "chunked" })), text)
 })
