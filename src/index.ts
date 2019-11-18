@@ -36,7 +36,7 @@ import _ from "lodash"
 * @param content The content to convert.
 * @param headers HTTP Headers provided with a request.
 */
-export function convertBody(content: Buffer | string, headers?: Headers): string {
+export default function convertBody(content: Buffer | string, headers?: Headers): string {
     // Try to extract content-type header
     const contentType = !_.isNil(headers) ? headers.get("content-type") : null
 
@@ -72,3 +72,4 @@ export function convertBody(content: Buffer | string, headers?: Headers): string
     )
 }
 
+module.exports = convertBody

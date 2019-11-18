@@ -2,7 +2,7 @@ import test from "ava"
 import { Headers } from "node-fetch"
 import { encode } from "iconv-lite"
 import _ from "lodash"
-import { convertBody } from "./src"
+import convertBody from "./src"
 
 test("should support encoding decode, xml dtd detect", (t) => {
     const text = "<?xml version=\"1.0\" encoding=\"EUC-JP\"?><title>日本語</title>"
