@@ -1,5 +1,5 @@
 import { parse as parseContentType } from "content-type"
-import _ from "lodash"
+import is from "@sindresorhus/is"
 import niceTry from "nice-try"
 
 /**
@@ -8,9 +8,9 @@ import niceTry from "nice-try"
  * @private
  */
 export default function getCharset(contentType: string): string | null {
-    if (_.isNil(contentType)) return null
+    if (is.nullOrUndefined(contentType)) return null
 
     const parsed = niceTry(() => parseContentType(contentType))
-    if (!_.isNil(parsed)) return parsed.parameters.charset
+    if (!is.nullOrUndefined(parsed)) return parsed.parameters.charset
     else return contentType
 }
