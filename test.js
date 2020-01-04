@@ -36,7 +36,7 @@ test("should support uncommon content-type order, end with qs", (t) => {
 
 test("should support chunked encoding, html4 detect", (t) => {
     const text = "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=Shift_JIS\" /><div>日本語</div>"
-    const padding = _.repeat("a", 10)
+    const padding = "a".repeat(10)
     t.is(convertBody(encode(padding + text, "Shift_JIS"), new Headers({ "Content-Type": "text/html", "Transfer-Encoding": "chunked" })), padding + text)
 })
 
