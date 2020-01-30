@@ -25,7 +25,7 @@
         "test": "yarn lint && ava"
     },
     "dependencies": {
-        "@sindresorhus/is": "^1.2.0",
+        "@sindresorhus/is": "^2.0.0",
         "cheerio": "^1.0.0-rc.3",
         "content-type": "^1.0.4",
         "iconv-lite": "^0.5.0",
