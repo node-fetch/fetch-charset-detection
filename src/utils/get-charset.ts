@@ -5,12 +5,11 @@ import niceTry from "nice-try"
 /**
  * Get the character set from a Content-Type header.
  * @param contentType The Content-Type HTTP header.
- * @private
  */
-export default function getCharset(contentType: string): string | null {
-    if (is.nullOrUndefined(contentType)) return null
+export = (contentType: string): string | null => {
+	if (is.nullOrUndefined(contentType)) return null
 
-    const parsed = niceTry(() => parseContentType(contentType))
-    if (!is.nullOrUndefined(parsed)) return parsed.parameters.charset
-    else return contentType
+	const parsed = niceTry(() => parseContentType(contentType))
+	if (!is.nullOrUndefined(parsed)) return parsed.parameters.charset
+	else return contentType
 }

@@ -4,12 +4,18 @@ Charset detection and conversion, originally from `node-fetch`.
 
 [![NPM](https://nodei.co/npm/fetch-charset-detection.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/fetch-charset-detection)
 
-## Importing
+## Install
 
-From your NodeJS application:
+```
+npm install fetch-charset-detection
+```
+
+## Usage
 
 ```js
 const convertBody = require("fetch-charset-detection");
+
+convertBody(data, headers);
 ```
 
 ## API
