@@ -2895,9 +2895,9 @@ nice-try@^1.0.4:
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
 nice-try@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-2.0.0.tgz#0ccb36ce82be13528f0217334adcf870c8eb3356"
-  integrity sha512-/o4KoXbUkEjD2NDwvBCkSzEDOfMuHPmbzSD5Pp2Bb5U/69MnEvpc4YfW2Y1BJqJpcaam04+fR0kF8n5xm8b6MQ==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/nice-try/-/nice-try-2.0.1.tgz#7099dfc79b1fe8ac04870288385217a48a5d6e25"
+  integrity sha512-+F6drVcPo6ABeuxhTieYy8aH/JkyrxM0g2nNK9p9mIHAVypyKqPr2fC2qLNNmVUtMWGGXSIJSJQAjpQ+B8bllg==
 
 node-fetch@^2.6.0:
   version "2.6.0"
