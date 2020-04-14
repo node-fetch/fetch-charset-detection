@@ -1,8 +1,8 @@
-# Fetch Charset Detection [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/fetch-charset-detection/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/fetch-charset-detection)
+# Fetch Charset Detection
 
-Charset detection and conversion, originally from `node-fetch`.
+> Charset detection and conversion, originally from `node-fetch`.
 
-[![NPM](https://nodei.co/npm/fetch-charset-detection.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/fetch-charset-detection)
+[![Build Status](https://travis-ci.com/node-fetch/fetch-charset-detection.svg?branch=master)](https://travis-ci.com/node-fetch/fetch-charset-detection)
 
 ## Install
 
