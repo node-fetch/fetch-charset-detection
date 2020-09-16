@@ -1,6 +1,5 @@
 # Build directories
 dist/
-docs/
 
 # Lock files
 package-lock.json

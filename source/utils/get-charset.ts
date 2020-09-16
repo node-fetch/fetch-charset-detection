@@ -1,12 +1,13 @@
-import {load} from "cheerio"
+import { load } from "cheerio"
 import parseContentType from "./parse-content-type"
 
 /**
-Get the charset of content.
-@param content The content to convert.
+Get the charset of `content`.
+@param content The content to stringify.
 @param headers HTTP Headers provided with the request.
 */
 function getCharset(content: Buffer, headers?: Headers) {
+	// See http://www.w3.org/TR/2011/WD-html5-20110113/parsing.html#determining-the-character-encoding
 	// Resulting charset
 	let charset: string
 
@@ -26,7 +27,7 @@ function getCharset(content: Buffer, headers?: Headers) {
 		charset = parseContentType(
 			$("meta[charset]").attr("charset") || // HTML5
 			$("meta[http-equiv][content]").attr("content") || // HTML4
-			load(data.replace(/<\?(.*)\?>/im, "<$1>"), {xmlMode: true}).root().find("xml").attr("encoding"), // XML
+			load(data.replace(/<\?(.*)\?>/im, "<$1>"), { xmlMode: true }).root().find("xml").attr("encoding") // XML
 		)
 
 		// Prevent decode issues when sites use incorrect encoding

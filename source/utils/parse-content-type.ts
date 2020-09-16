@@ -1,12 +1,15 @@
-import {parse} from "content-type"
-import niceTry from "nice-try"
+import { parse } from "content-type"
 
 /**
 Get the character set from a Content-Type header.
 @param contentType The Content-Type HTTP header.
 */
 function parseContentType(contentType: string) {
-	return niceTry(() => parse(contentType))?.parameters?.charset ?? contentType
+	try {
+		return parse(contentType).parameters.charset
+	} catch (_) {
+		return contentType
+	}
 }
 
 export = parseContentType

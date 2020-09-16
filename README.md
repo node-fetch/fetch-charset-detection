@@ -1,23 +1,33 @@
-# Fetch Charset Detection
+# fetch-charset-detection [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/fetch-charset-detection/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/fetch-charset-detection)
 
-> Charset detection and conversion, originally from `node-fetch`.
-
-[![Build Status](https://travis-ci.com/node-fetch/fetch-charset-detection.svg?branch=master)](https://travis-ci.com/node-fetch/fetch-charset-detection)
+Detect the encoding of a buffer and stringify it. Originally from [node-fetch](https://github.com/node-fetch/node-fetch)
 
 ## Install
 
-```
+```sh
 npm install fetch-charset-detection
 ```
 
 ## Usage
 
 ```js
-const convertBody = require("fetch-charset-detection");
+const convertBody = require("fetch-charset-detection")
 
-convertBody(data, headers);
+convertBody(content)
 ```
 
 ## API
 
-Refer to the [documentation](https://richienb.github.io/fetch-charset-detection).
+### convertBody(content, headers?)
+
+#### content
+
+Type: `Buffer`
+
+The content to stringify.
+
+#### headers
+
+Type: [`Headers`](https://developer.mozilla.org/en-US/docs/Web/API/Headers)
+
+The HTTP headers provided with the content.
