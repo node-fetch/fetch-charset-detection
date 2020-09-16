@@ -1,6 +1,6 @@
 # fetch-charset-detection [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/fetch-charset-detection/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/fetch-charset-detection)
 
-Detect the encoding of a buffer and stringify it. Originally from [node-fetch](https://github.com/node-fetch/node-fetch)
+Detect the encoding of a buffer and stringify it. Originally from [node-fetch](https://github.com/node-fetch/node-fetch).
 
 ## Install
 
