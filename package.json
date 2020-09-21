@@ -41,7 +41,7 @@
 		"@typescript-eslint/eslint-plugin": "^4.1.1",
 		"@typescript-eslint/parser": "^4.1.1",
 		"ava": "^3.12.1",
-		"eslint-config-richienb": "^0.4.2",
+		"eslint-config-richienb": "^0.5.0",
 		"eslint-config-xo-typescript": "^0.32.0",
 		"node-fetch": "^2.6.1",
 		"ts-node": "^9.0.0",
