@@ -42,7 +42,7 @@
 		"@typescript-eslint/parser": "^4.1.1",
 		"ava": "^3.12.1",
 		"eslint-config-richienb": "^0.4.2",
-		"eslint-config-xo-typescript": "^0.32.0",
+		"eslint-config-xo-typescript": "^0.41.1",
 		"node-fetch": "^2.6.1",
 		"ts-node": "^9.0.0",
 		"xo": "^0.33.1"
