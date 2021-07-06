@@ -45,7 +45,7 @@
 		"eslint-config-xo-typescript": "^0.32.0",
 		"node-fetch": "^2.6.1",
 		"ts-node": "^9.0.0",
-		"xo": "^0.33.1"
+		"xo": "^0.41.0"
 	},
 	"xo": {
 		"extends": "richienb",
