@@ -11,9 +11,9 @@ npm install fetch-charset-detection
 ## Usage
 
 ```js
-const convertBody = require("fetch-charset-detection")
+import convertBody from 'fetch-charset-detection';
 
-convertBody(content)
+convertBody(content);
 ```
 
 ## API
@@ -22,7 +22,7 @@ convertBody(content)
 
 #### content
 
-Type: `Buffer`
+Type: [`Buffer`](https://nodejs.org/api/buffer.html#buffer_class_buffer)
 
 The content to stringify.
 
