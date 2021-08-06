@@ -5,17 +5,3 @@ updates:
   schedule:
     interval: daily
   open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: eslint-config-xo-typescript
-    versions:
-    - 0.37.0
-    - 0.38.0
-    - 0.39.0
-  - dependency-name: xo
-    versions:
-    - 0.37.1
-    - 0.38.1
-    - 0.38.2
-  - dependency-name: "@richienb/tsconfig"
-    versions:
-    - 0.2.0
