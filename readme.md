@@ -22,7 +22,7 @@ convertBody(content);
 
 #### content
 
-Type: [`Buffer`](https://nodejs.org/api/buffer.html#buffer_class_buffer)
+Type: [`Buffer`](https://nodejs.org/api/buffer.html#buffer_class_buffer) | [`TypedArray`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays)
 
 The content to stringify.
 

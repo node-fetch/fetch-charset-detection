@@ -1,7 +1,10 @@
+import type {Buffer} from 'node:buffer';
 import test from 'ava';
 import {Headers} from 'node-fetch';
 import iconv from 'iconv-lite';
 import convertBody from './source/index.js';
+
+const toArrayBuffer = (buffer: Buffer): ArrayBuffer => buffer.buffer.slice(0, buffer.byteLength);
 
 test('should support encoding decode, xml dtd detect', t => {
 	const text = '<?xml version="1.0" encoding="EUC-JP"?><title>日本語</title>';
@@ -38,4 +41,9 @@ test('should only do encoding detection up to 1024 bytes', t => {
 	const text = '中文';
 	const padding = 'a'.repeat(1200);
 	t.not(convertBody(iconv.encode(padding + text, 'gbk'), new Headers({'Content-Type': 'text/html', 'Transfer-Encoding': 'chunked'})), text);
+});
+
+test('should support typed arrays', t => {
+	const text = '<div>日本語</div>';
+	t.is(convertBody(toArrayBuffer(iconv.encode(text, 'Shift_JIS')), new Headers({'Content-Type': 'text/html; charset=Shift-JIS'})), text);
 });

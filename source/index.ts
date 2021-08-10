@@ -1,5 +1,6 @@
-import type {Buffer} from 'node:buffer';
+import {Buffer} from 'node:buffer';
 import iconv from 'iconv-lite';
+import type {TypedArray} from 'type-fest';
 import getCharset from './utils/get-charset.js';
 
 /**
@@ -15,10 +16,14 @@ import convertBody from 'fetch-charset-detection';
 convertBody(content);
 ```
 */
-export default function convertBody(content: Buffer, headers?: Headers): string {
+export default function convertBody(content: Buffer | ArrayBuffer | SharedArrayBuffer | TypedArray, headers?: Headers): string {
+	if (!Buffer.isBuffer(content)) {
+		content = Buffer.from(content);
+	}
+
 	// Turn raw buffers into a single utf-8 buffer
 	return iconv.decode(
-		content,
-		getCharset(content, headers),
+		content as Buffer,
+		getCharset(content as Buffer, headers),
 	);
 }
