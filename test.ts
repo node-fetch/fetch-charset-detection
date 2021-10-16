@@ -26,6 +26,11 @@ test('should support encoding decode, html4 detect', t => {
 	t.is(convertBody(iconv.encode(text, 'gb2312'), new Headers({'Content-Type': 'text/html'})), text);
 });
 
+test('should select the correct meta tag, html4 detect', t => {
+	const text = '<meta http-equiv="Language" content="de"/><meta http-equiv="Content-Language" content="de"/><meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>';
+	t.is(convertBody(iconv.encode(text, 'iso-8859-1'), new Headers({'Content-Type': 'text/html'})), text);
+});
+
 test('should support uncommon content-type order, end with qs', t => {
 	const text = '中文';
 	t.is(convertBody(iconv.encode(text, 'gbk'), new Headers({'Content-Type': 'text/plain; charset=gbk; qs=1'})), text);

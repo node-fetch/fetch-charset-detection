@@ -28,7 +28,7 @@ export default function getCharset(content: Buffer, headers?: Headers) {
 
 		charset = parseContentType(
 			$('meta[charset]').attr('charset') // HTML5
-			|| $('meta[http-equiv][content]').attr('content') // HTML4
+			|| $('meta[http-equiv=Content-Type][content]').attr('content') // HTML4
 			|| load(data.replace(/<\?(.*)\?>/im, '<$1>'), {xmlMode: true}).root().find('xml').attr('encoding'), // XML
 		);
 
