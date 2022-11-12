@@ -1,6 +1,6 @@
 {
 	"name": "fetch-charset-detection",
-	"version": "0.0.0",
+	"version": "1.0.1",
 	"description": "Detect the encoding of a buffer and stringify it.",
 	"repository": "https://github.com/Richienb/fetch-charset-detection.git",
 	"author": "Richie Bendall <richiebendall@gmail.com>",
@@ -18,7 +18,8 @@
 		"build": "tsc",
 		"dev": "tsc --watch",
 		"lint": "xo",
-		"test": "xo && ava"
+		"test": "xo && ava",
+		"prepublishOnly": "tsc"
 	},
 	"keywords": [
 		"content-type",
