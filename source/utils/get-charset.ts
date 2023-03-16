@@ -19,23 +19,26 @@ export default function getCharset(content: Buffer, headers?: Headers) {
 		charset = parseContentType(contentType);
 	}
 
-	// No charset in content type, peek at response body for at most 1024 bytes
-	const data = content.slice(0, 1024).toString();
+	
 
 	// HTML5, HTML4 and XML
-	if (!charset && data) {
-		const $ = load(data);
+	if (!charset) {
+		// No charset in content type, peek at response body for at most 1024 bytes		
+		const data = content.slice(0, 1024).toString();
+		if (data) {
+			const $ = load(data);
 
-		charset = parseContentType(
-			$('meta[charset]').attr('charset') // HTML5
-			|| $('meta[http-equiv=Content-Type][content]').attr('content') // HTML4
-			|| load(data.replace(/<\?(.*)\?>/im, '<$1>'), {xmlMode: true}).root().find('xml').attr('encoding'), // XML
-		);
+			charset = parseContentType(
+				$('meta[charset]').attr('charset') // HTML5
+				|| $('meta[http-equiv=Content-Type][content]').attr('content') // HTML4
+				|| load(data.replace(/<\?(.*)\?>/im, '<$1>'), {xmlMode: true}).root().find('xml').attr('encoding'), // XML
+			);
 
-		// Prevent decode issues when sites use incorrect encoding
-		// ref: https://hsivonen.fi/encoding-menu/
-		if (charset && ['gb2312', 'gbk'].includes(charset.toLowerCase())) {
-			charset = 'gb18030';
+			// Prevent decode issues when sites use incorrect encoding
+			// ref: https://hsivonen.fi/encoding-menu/
+			if (charset && ['gb2312', 'gbk'].includes(charset.toLowerCase())) {
+				charset = 'gb18030';
+			}
 		}
 	}
 
