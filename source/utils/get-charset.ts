@@ -19,11 +19,15 @@ export default function getCharset(content: Buffer, headers?: Headers) {
 		charset = parseContentType(contentType);
 	}
 
+	if (charset) {
+		return charset;
+	}
+
 	// No charset in content type, peek at response body for at most 1024 bytes
 	const data = content.slice(0, 1024).toString();
 
 	// HTML5, HTML4 and XML
-	if (!charset && data) {
+	if (data) {
 		const $ = load(data);
 
 		charset = parseContentType(
